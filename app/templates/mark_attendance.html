@@ -1,0 +1,57 @@
+{% extends 'index5.html' %}
+   {% block navhead %}Mark Attendance!!{% endblock %}
+    {% block title %}Mark_attendance{% endblock %}
+
+{% block nav1 %}
+    <a href="/teacher_dashboard/" data-toggle="collapse" aria-expanded="false" ">Attendance</a>
+{% endblock %}
+{% block nav4 %}<a href="/show_classes/">Students</a>{% endblock %}
+{% block nav5 %}<a href="/logout/" data-toggle="collapse" aria-expanded="false">Logout</a>
+{% endblock %}
+
+
+{% block page4 %}<a class="nav-link" href="/logout/">Logout</a>{% endblock %}
+
+
+{% block content %}
+<style>
+  input[type="checkbox"]{
+  width: 20px; /*Desired width*/
+  height: 20px; /*Desired height*/
+}
+</style>
+
+    <form  action="/store_attendance/" method="post">
+
+<table id="customers">
+  <tr>
+    <th>Roll No.</th>
+    <th>Name</th>
+    <th>Present</th>
+  </tr>
+    <tr>
+
+        {% for i in students %}
+
+         <tr>
+         <td>{{i.enroll_no}}</td>  
+         <td> {{i.name}}</td>
+         <td>
+            <input type="checkbox" name="present_no" value="{{i.enroll_no}}">
+         </td>
+         </tr>
+         {% endfor %}
+    </tr>
+</tr>
+  <tr>
+  </tr>
+</table>
+<br><br>
+   <!-- <button type="submit" style="color:  rgb(89, 137, 214)">Submit</button> -->
+
+
+<button class="button">Submit</button>
+
+
+</form>
+{% endblock %}

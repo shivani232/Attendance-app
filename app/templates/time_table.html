@@ -1,0 +1,98 @@
+{% extends 'index5.html' %}
+
+{% block navhead %}Hi {{name}}!{% endblock %}
+{% block title %}head_dashboard{% endblock %}
+
+
+{% block nav1 %}
+    <a href="/head_dashboard/" data-toggle="collapse" aria-expanded="false" ">Profile</a>
+{% endblock %}
+
+{% block nav2 %}<a href="/time_table/">Time Table</a>{% endblock %}
+
+{% block nav3 %}<a href="/all_students/">Students</a>{% endblock %}
+{% block nav4 %}<a href="/all_teachers/">Subjects</a>{% endblock %}
+{% block nav5 %}<a href="/logout/" data-toggle="collapse" aria-expanded="false">Logout</a>
+{% endblock %}
+
+{% block nav6 %}<a href="/register_student/" data-toggle="collapse" aria-expanded="false">Register student</a>
+{% endblock %}
+{% block nav7 %}<a href="/register_teacher/" data-toggle="collapse" aria-expanded="false">Register teacher</a>
+{% endblock %}
+
+
+
+{% block page4 %}<a class="nav-link" href="/logout/">Logout</a>{% endblock %}
+
+
+{% block content %}
+<table id="customers">
+  
+  <thead>
+  	<th>   </th>
+    <th>FE1</th>
+    <th>SE1</th>
+    <th>TE1</th>
+    <th>BE1</th>
+  </thead>
+<tbody>
+	<tr>
+		<td>Monday</td>
+		<td>
+			Physics
+			<br>
+			Chemistry
+		</td>
+		<td>DELD<br>COA<br>MP</td>
+		<td>TOC<br>OS<br>SDL</td>
+		<td>ML<br>SMD<br>ICS</td>
+	</tr>
+	<tr>
+		<td>Tuesday</td>
+		<td>Physics
+			<br>
+			Maths
+		</td>
+		<td>M.P<br>COA</td>
+		<td>TOC<br>SDL</td>
+		<td>ML<br>ICS</td>
+	</tr>
+	<tr>
+		<td>Wednesday</td>
+		<td>Physics
+			<br>
+			Chemistry
+		</td>
+		<td>DELD</td>
+		<td>OS</td>
+		<td>SMD</td>
+	</tr>
+		<tr>
+		<td>Thursday</td>
+		<td>Chemistry
+			<br>
+			Maths
+		</td>
+		<td>DELD<br>COA</td>
+		<td>TOC<br>OS</td>
+		<td>ML<br>ICS</td>
+	</tr>
+		<tr>
+		<td>Friday</td>
+		<td>Physics
+			<br>
+			Chemistry
+		</td>
+		<td>M.P<br>COA</td>
+		<td>TOC<br>SDL</td>
+		<td>ML<br>SMD</td>
+	</tr>
+</tbody>
+	
+</tr>
+
+</table>
+<br>
+<h6>*Saturday and Sunday are considered as official holidays*</h6>
+
+{% endblock %}

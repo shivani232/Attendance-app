@@ -1,0 +1,50 @@
+{% extends 'login/login_base.html' %}
+  {% block title %}Attendance App{% endblock %}
+ 
+  {% block msg3 %}{{incorrectotp}}{{charotp}}{% endblock %}
+  {% block content %}
+	<form action="/otp/" method="POST">
+		<div class="wrapper" style="height: 100px">
+			<input class="input" type="password" name=input style="top: 30px" placeholder="One Time Password">
+			<span class="underline" style="top:83px"></span>
+
+		</div>
+
+		<br>
+	  <button type="submit"> </button>
+	</form>
+	<br>
+  </div>
+	<center>
+		<div style="font-family: 'Arvo';font-size: 15px;top: 55%;left: 28%;position: absolute">
+			<p id="some_div">
+				
+			</p>
+		</div>
+
+		<div style="font-family: 'Arvo';font-size: 15px;top: 60%;left: 45%;position: absolute">
+			<a href="/login/" style="color: dodgerblue"><--Back</a>
+		</div>
+	</center>
+<script>
+    function redirect(){
+        window.location.href = "/login/";
+    }
+
+    var timeLeft = 10;
+    var elem = document.getElementById('some_div');
+
+    var timerId = setInterval(countdown, 1000);
+
+    function countdown() {
+        if (timeLeft == 0) {
+        clearTimeout(timerId);
+        setTimeout(redirect, 100);
+        } else {
+        elem.innerHTML = 'This session will timed out ' + timeLeft + ' seconds';
+        timeLeft--;
+        }
+    }
+</script>
+
+{% endblock %}

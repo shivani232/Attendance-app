@@ -1,0 +1,50 @@
+{% extends 'index5.html' %}
+
+{% block navhead %}Hi {{name}}!{% endblock %}
+{% block title %}teacher_dashboard{% endblock %}
+
+
+{% block nav1 %}
+    <a href="/teacher_dashboard/" data-toggle="collapse" aria-expanded="false" ">Attendance</a>
+{% endblock %}
+{% block nav4 %}<a href="/show_classes/">Students</a>{% endblock %}
+{% block nav5 %}<a href="/logout/" data-toggle="collapse" aria-expanded="false">Logout</a>
+{% endblock %}
+
+
+{% block page4 %}<a class="nav-link" href="/logout/">Logout</a>{% endblock %}
+
+
+
+{% block content %}
+
+
+<h3>{{division}} - {{subject}} </h3>
+
+<table id="customers">
+  <tr>
+    <th>Enroll No.</th>
+    <th>Name</th>
+    <th>Total Lectures</th>
+    <th>Attended Lectures</th>
+    <th>Attendance</th>
+  </tr>
+    {% for i in student_info %}
+   
+     <tr>
+     <td>{{i.enroll_no}}</td>   
+     <td><a href="/student_profile/?student={{i.student}}">{{i.student}}</a></td>  
+    <td>{{sub_total}}</td>
+    <td>{{i.sub_present}}</td>
+    <td>{{i.sub_attendance}} %</td>
+
+     </tr>
+     {% endfor %}
+</tr>
+</table>
+
+
+
+
+
+{% endblock %}

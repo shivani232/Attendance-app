@@ -1,0 +1,73 @@
+{% extends 'index5.html' %}
+
+{% block navhead %}Hi {{name}}!{% endblock %}
+{% block title %}head_dashboard{% endblock %}
+
+
+{% block nav1 %}
+    <a href="/head_dashboard/" data-toggle="collapse" aria-expanded="false" ">Profile</a>
+{% endblock %}
+
+{% block nav2 %}<a href="/time_table/">Time Table</a>{% endblock %}
+
+{% block nav3 %}<a href="/all_students/">Students</a>{% endblock %}
+{% block nav4 %}<a href="/all_teachers/">Subjects</a>{% endblock %}
+{% block nav5 %}<a href="/logout/" data-toggle="collapse" aria-expanded="false">Logout</a>
+{% endblock %}
+
+{% block nav6 %}<a href="/register_student/" data-toggle="collapse" aria-expanded="false">Register student</a>
+{% endblock %}
+{% block nav7 %}<a href="/register_teacher/" data-toggle="collapse" aria-expanded="false">Register teacher</a>
+{% endblock %}
+
+
+
+{% block page4 %}<a class="nav-link" href="/logout/">Logout</a>{% endblock %}
+
+
+{% block content %}
+<h4 style="color: green">{{success}}</h4>
+<h4 style="color: red">{{same_teacher}}</h4>
+
+<div class="form-style-5">
+
+<form action="/register_teacher/" method="post">
+<fieldset>
+<legend><span class="number">1</span> Teacher Info</legend>
+<input type="text" name="enroll_no" placeholder="Enter Enrollment No.">
+<input type="text" name="name" placeholder="Enter name">
+<input type="password" name="password" placeholder="Enter password">
+<input type="email" name="email" placeholder="Enter Email Id">
+
+</fieldset>
+
+<fieldset>
+<!-- <label for="job">College:</label> -->
+<legend><span class="number">2</span> College Info</legend>
+<select id="job" name="division">
+  <option value="FE1">FE1</option>
+  <option value="SE1">SE1</option>
+  <option value="TE1">TE1</option>
+  <option value="BE1">BE1</option>
+</select>      
+<select id="job" name="subject">
+  <option value="physics">Physics</option>
+  <option value="chemistry">Chemistry</option>
+  <option value="maths">Maths</option>
+  <option value="deld">D.E.L.D</option>
+  <option value="coa">C.O.A</option>
+  <option value="mp">M.P</option>
+  <option value="toc">T.O.C</option>
+  <option value="os">O.S</option>
+  <option value="sdl">S.D.L</option>
+  <option value="ml">M.L</option>
+  <option value="smd">S.M.D</option>
+  <option value="ics">I.C.S</option>
+
+</select>      
+
+</fieldset>
+<input type="submit" value="submit" />
+</form>
+
+{% endblock %}

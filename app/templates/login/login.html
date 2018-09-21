@@ -1,0 +1,27 @@
+{% extends 'login/login_base.html' %}
+  {% block title %}Attendance App{% endblock %}
+ 
+  {% block msg3 %}{{incorrectpass}}{{notexist}}{{password_changed}}{% endblock %}
+  {% block pass_ch %}{{password_changed}}{% endblock %}
+
+  {% block content %}
+	<form action="/login/" method="POST">
+		<div class="wrapper">
+			<input class="input" type="text" name=enroll_no style="top: 30px" placeholder="Enrollment Number">
+			<span class="underline" style="top:83px"></span>
+
+			<input class="input" type="password" name=password style="top: 50px" placeholder="Password">
+			<span class="underline" style="top:153px"></span>
+		</div>
+		<br>
+	  <button type="submit"> </button>
+	</form>
+	<br>
+  </div>
+	<center>
+		<div style="font-family: 'Arvo';font-size: 15px;top: 75%;left: 40%;position: absolute">
+			<a href="/forgot_password/" style="color: dodgerblue">Forgot Password?</a>
+		</div>
+	</center>
+
+{% endblock %}

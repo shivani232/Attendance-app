@@ -1,0 +1,124 @@
+
+{% extends 'index5.html' %}
+{% block navhead %}Hello {{student.name}}!{% endblock %}
+
+{% block title %}Fee_summary{% endblock %}
+
+{% block nav1 %}
+    <a href="/student_profile/" data-toggle="collapse" aria-expanded="false" ">Profile</a>
+{% endblock %}
+{% block nav2 %}
+    <a href="/student_dashboard/" data-toggle="collapse" aria-expanded="false" ">Attendance</a>
+{% endblock %}
+
+{% block nav3 %}
+<a href="/weekly_stats/?enroll_no={{student.enroll_no}}&division={{student.division}}" data-toggle="collapse" aria-expanded="false">Weekly Stats</a>
+{% endblock %}
+
+{% block nav4 %}<a href="/fee_summary/">Fee summary</a>{% endblock %}
+}
+{% block nav5 %}<a href="/logout/" data-toggle="collapse" aria-expanded="false">Logout</a>
+{% endblock %}
+
+{% block page4 %}<a class="nav-link" href="/logout/">Logout</a>{% endblock %}
+
+
+{% block content %}
+
+<style>
+	#sp
+	{
+		max-width: 70%;
+		/*margin-top : 70px;*/
+
+	}
+	.tables{
+		margin-left:120px;
+	}
+	.a
+	{
+		text-transform: uppercase;
+	}
+	.panel-heading
+	{
+    font-weight: bolder;
+		background-color: rgb(89, 137, 214);
+	}
+  .table td, .table th 
+  {
+    border: 2px solid #dee2e6;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+  .panel-heading {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: initial;
+  }
+  .table thead th {
+      border: 2px solid #dee2e6;
+    font-family: initial;
+  }
+</style>
+
+<div class="tables">
+
+<div class="panel panel-primary" id="sp">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Fee Summary</div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Enrollment No.</th>
+        <th>Name</th>       
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>{{student.enroll_no}}</td>
+        <td> {{student.name}}</td>
+        </tr>
+    </tbody>
+     <thead>
+      <tr>
+        <th>Division</th>
+        <th>Admission Date</th>       
+       </tr>
+     </thead>
+     <tbody>
+        <tr>
+        <td>{{student.division}}</td>
+        <td>{{student.admission_date|date:"d/m/y"}}</td>          
+        </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>University Fee</th>
+        <th>Development Fee</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>{{student.university_fee}}</td>
+        <td>{{student.development_fee}}</td>
+    	</tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Tution Fee</th>
+        <th>Exam Fee</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>{{student.tution_fee}}</td>
+        <td>{{student.exam_fee}}</td>
+      </tr>
+    </tbody>
+
+  </table>
+ 
+{% endblock %}

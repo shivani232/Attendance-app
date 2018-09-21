@@ -1,0 +1,109 @@
+{% extends 'index5.html' %}
+
+{% block navhead %}Hi {{name}}!{% endblock %}
+{% block title %}head_dashboard{% endblock %}
+
+
+{% block nav1 %}
+    <a href="/head_dashboard/" data-toggle="collapse" aria-expanded="false" ">Profile</a>
+{% endblock %}
+
+{% block nav2 %}<a href="/time_table/">Time Table</a>{% endblock %}
+
+{% block nav3 %}<a href="/all_students/">Students</a>{% endblock %}
+{% block nav4 %}<a href="/all_teachers/">Subjects</a>{% endblock %}
+{% block nav5 %}<a href="/logout/" data-toggle="collapse" aria-expanded="false">Logout</a>
+{% endblock %}
+
+{% block nav6 %}<a href="/register_student/" data-toggle="collapse" aria-expanded="false">Register student</a>
+{% endblock %}
+{% block nav7 %}<a href="/register_teacher/" data-toggle="collapse" aria-expanded="false">Register teacher</a>
+{% endblock %}
+
+
+
+{% block page4 %}<a class="nav-link" href="/logout/">Logout</a>{% endblock %}
+
+{% block content %}
+
+<h4>Class :- FE1</h4>
+<table id="customers">
+  
+  <tr>
+    <th>Enroll No.</th>
+    <th>Name</th>
+    <th>Average Attendance</th>
+  </tr>
+    {% for i in fe1 %}
+   
+     <tr>
+     <td>{{i.enroll_no}}</td>   
+     <td>{{i.name}}</a></td>  
+    <td>{{i.avg_attendance}}</td>
+     </tr>
+     {% endfor %}
+</tr>
+</table>
+
+
+<h4>Class :- SE1</h4>
+<table id="customers">
+  
+  <tr>
+    <th>Enroll No.</th>
+    <th>Name</th>
+    <th>Average Attendance</th>
+  </tr>
+    {% for i in se1 %}
+   
+     <tr>
+     <td>{{i.enroll_no}}</td>   
+     <td>{{i.name}}</a></td>  
+    <td>{{i.avg_attendance}}</td>
+     </tr>
+     {% endfor %}
+</tr>
+</table>
+
+<h4>Class :- TE1</h4>
+<table id="customers">
+  
+  <tr>
+    <th>Enroll No.</th>
+    <th>Name</th>
+    <th>Average Attendance</th>
+  </tr>
+    {% for i in te1 %}
+   
+     <tr>
+     <td>{{i.enroll_no}}</td>   
+     <td>{{i.name}}</a></td>  
+    <td>{{i.avg_attendance}}</td>
+     </tr>
+     {% endfor %}
+</tr>
+</table>
+
+<h4>Class :- BE1</h4>
+<table id="customers">
+  
+  <tr>
+    <th>Enroll No.</th>
+    <th>Name</th>
+    <th>Average Attendance</th>
+  </tr>
+    {% for i in be1 %}
+   
+     <tr>
+     <td>{{i.enroll_no}}</td>   
+     <td>{{i.name}}</a></td>  
+    <td>{{i.avg_attendance}}</td>
+     </tr>
+     {% endfor %}
+</tr>
+</table>
+
+
+
+
+{% endblock %}

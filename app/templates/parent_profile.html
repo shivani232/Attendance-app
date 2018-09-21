@@ -1,0 +1,196 @@
+
+{% extends 'index5.html' %}
+{% block navhead %}Hello {{parent.name}}!{% endblock %}
+{% block title %}parent_profile{% endblock %}
+
+{% block nav1 %}<a href="/parent_profile">Profile</a>{% endblock %}
+
+{% block nav2 %}
+    <a href="/parent_dashboard/" data-toggle="collapse" aria-expanded="false" ">Candidate Attendance</a>
+{% endblock %}
+
+{% block nav3 %}
+<a href="/weekly_stats/?enroll_no={{student.enroll_no}}&division={{student.division}}" data-toggle="collapse" aria-expanded="false">Weekly Stats</a>
+{% endblock %}
+{% block nav5 %}<a href="/logout/" data-toggle="collapse" aria-expanded="false">Logout</a>
+{% endblock %}
+
+{% block page4 %}<a class="nav-link" href="/logout/">Logout</a>{% endblock %}
+
+
+{% block content %}
+
+
+
+
+<style>
+	#sp
+	{
+		max-width: 70%;
+		/*margin-top : 70px;*/
+
+	}
+	.tables{
+		margin-left:120px;
+	}
+	.a
+	{
+		text-transform: uppercase;
+	}
+	.panel-heading
+	{
+    font-weight: bolder;
+		background-color: rgb(89, 137, 214);
+	}
+  .table td, .table th 
+  {
+    border: 2px solid #dee2e6;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+  .panel-heading {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: initial;
+  }
+  .table thead th {
+      border: 2px solid #dee2e6;
+    font-family: initial;
+  }
+</style>
+<h3>Welcome {{parent.name}}</h3>
+<br>
+<div class="tables">
+
+<div class="panel panel-primary" id="sp">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Profile</div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Parent Id</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>{{parent.name}}</td>
+        <td>{{parent.parent_id}}</td>
+    	</tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Email Id</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>{{parent.email}}</td>
+        <td> </td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Occupation</th>
+        <th>Relation</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td> {{parent.occupation}}</td>
+        <td>{{parent.relation}} </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <div class="panel-heading">Student Details</div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Enrollment No.</th>
+        <th>Name</th>       
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>{{student.enroll_no}}</td>
+        <td> {{student.name}}</td>
+        </tr>
+    </tbody>
+     <thead>
+      <tr>
+        <th>Age</th>
+        <th>Admission Date</th>       
+       </tr>
+     </thead>
+     <tbody>
+        <tr>
+        <td>{{student.age}}</td>
+        <td>{{student.admission_date|date:"d/m/y"}}</td>          
+        </tr>
+    </tbody>
+     <thead>
+      <tr>
+        <th>Email Id</th>
+        <th>Division</th>
+       </tr>
+     </thead>
+     <tbody>
+        <tr>
+        <td>{{student.email}} </td>
+        <td>{{student.division}}</td>
+        </tr>
+    </tbody>
+  </table>
+
+ 
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1> Welcome PARENT ! </h1>
+
+<p> NAME : {{parent.name}}</p>
+<p> ID : {{parent.parent_id}}</p>
+<p> GENDER : {{parent.gender}}</p>
+<p> AGE : {{parent.age}}</p>
+<p> EMAIL : {{parent.email}}</p>
+<p> RELATION : {{parent.relation}}</p>
+<p> OCCUPATION : {{parent.occupation}}</p>
+
+
+
+
+
+<h3> Student Information :</h3>
+
+
+
+
+<p> NAME : {{student.name}}</p>
+<p> ENROLMENT NO : {{student.enroll_no}}</p>
+<p> DIVISION : {{student.division}}</p>
+<p> GENDER : {{student.gender}}</p>
+<p> AGE : {{student.age}}</p>
+<p> EMAIL : {{student.email}}</p>
+<p> ADMISSION DATE : {{student.admission_date}}</p>
+
+
+<br><br>
+
